@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - EntityWare free</title>
+    <link rel="shortcut icon" href="img/ellogo.png">
+    <link href='boxicons%402.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="stylesheet" href="css/main.css?1703620964">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+    <script src="/script.js"></script>
+    <script>
+        new Snow();
+    </script>
+
+    <div class="snowflakes"></div>
+
+    <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__item"></div>
+          <div class="preloader__item"></div>
+        </div>
+      </div>
+
+    <header class="">
+        <a class="logo" href="">EntityWare <span>free</span></a>
+        
+        <ul class="navlist">
+            
+            <li><a style="color: rgb(245, 243, 246);" href="index.html">Главная</a></li>
+            <li><a class="login" href="https://t.me/EntityWare">Телеграм Канал</a></li>
+        </ul>
+    </header>
+
+    <!-- Секция #1 -->
+    <img class="bg-img" alt="">
+    <div class="gradient"></div>
+    <div class="transition"></div>
+
+    <section id="main">
+        <div class="page-text">
+            <img class="anim" src="img/overlay_4.png" alt="">
+            <h1 class="main-text anim">Побеждай в <span class="minecraft">Blockpost Mobile</span> <br> прямо сейчас!</h1>
+            <p class="desc-text anim">Встречайте лучший софт c красивой <br> визуальной составляющией на русском <br>  языке!</p>
+        </div>
+    </section>
+
+    <!-- Секция #2 -->
+    <section id="whyus">
+        <div class="whyus-text">
+            <h1 class="sec-title">Почему именно мы?</h1>
+            <div class="container">
+                <div class="wbox">
+                    <h1 class="title">Интерфейс</h1>
+                    <p class="desc">Красивый интерфейс софта не даст вам заскучать и не будет есть драгоценный fps.</p>
+                </div>
+                
+                <div class="wbox">
+                    <h1 class="title">Доступность</h1>
+                    <p class="desc">Наш софт лучший и бесплатный на рынке.</p>
+                </div>
+                <div class="wbox">
+                    <h1 class="title">Защита</h1>
+                    <p class="desc">Мы имеем превосходную защиту, что позволяет вам не боятся за слив исходников софта.</p>
+                </div>
+                <div style="cursor: pointer;" target="_blank" onclick="window.location='https://t.me/EntityWare" class="wbox">
+                    <h1 class="title">Поддержка</h1>
+                    <p class="desc">Наша поддержка хорошо вас выслушает и поможет вам с любыми возникшими трудностями</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция #3  -->
+    <section id="showcase"> 
+        <div class="video-text">
+            <div class="video-showcase">
+                <video style="position: absolute; opacity: 0.5; filter: blur(20px);" src="img/videos/Rick.mp4" muted="" autoplay="" loop="" plays-inline=""></video>
+                <video src="img/videos/Rick.mp4" muted="" autoplay="" loop="" plays-inline=""></video>
+            </div>
+            <h1 class="main-text">Видеообзор на EntityWare</h1>
+            <p class="desc-text">Это обзор на софт EntityWare в котором <br> демонстрируется часть функционала и часть <br> всего того что на самом деле есть</p>
+        </div>
+    </section>
+
+    <!-- Секция #4 -->
+    <section id="inst-client"> 
+        <div class="inst-text">
+            <h1 class="title">Установка софта</h1>
+            <p class="desc">Наилучший чит для новичков с понятным <br>
+                и современным интерфейсом  </p>
+                <a class="main-btn install anim" href="https://file.com.ru/Ma5onO7iieciaUn"><span><i class="bx bxs-download"></i></span> Скачать</a>
+        </div>
+    </section>
+    
+        
+    <!-- Секция #5 -->
+        <section id="join-us">
+            <div class="con-text">
+            </div>
+        </section>
+    <script>
+
+        window.onload = function () {
+          document.body.classList.add('loaded_hiding');
+          window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+          }, 500);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.querySelector("header");
+            window.addEventListener("scroll", function() { 
+                header.classList.toggle("sticky", window.scrollY > 20);
+            });
+        });
+        
+
+//<!-- Секция #6 -->
+
+
+
+let valueDisplays = document.querySelectorAll(".desc-count");
+let interval = 2000;
+let maxEndValue = 0;
+let numSteps = 1000;
+
+valueDisplays.forEach((valueDisplay) => {
+   let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+   maxEndValue = Math.max(maxEndValue, endValue);
+});
+
+let duration = Math.floor(interval / numSteps);
+
+valueDisplays.forEach((valueDisplay) => {
+   let startValue = 0;
+   let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+   let increment = (endValue - startValue) / numSteps;
+   let step = 0;
+
+   let counter = setInterval(function () {
+      startValue += increment;
+      step++;
+      valueDisplay.textContent = Math.round(startValue);
+      if (step >= numSteps) {
+          clearInterval(counter);
+          valueDisplay.textContent = endValue;
+      }
+   }, duration);
+});
+
+
+    </script>
+</body>
+</html>
